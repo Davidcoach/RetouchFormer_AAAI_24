@@ -1,4 +1,4 @@
-# RetouchFormer: LLM-based Interactive High-Fidelity Face Retouching via Imperfection Prompting
+# RetouchFormer: Semi-supervised High-Quality Face Retouching Transformer with Prior-Based Selective Self-Attention
 
 <img src="flowchart.png"/>
 
