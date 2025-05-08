@@ -1,0 +1,41 @@
+{
+    "seed": 2022,
+    "save_dir": "release_model/",
+    "eval_txt": "RetouchFormer.txt",
+    "train_data_loader": {
+        "dataroot": "./datasets/retouching",
+        "size" : 512,
+        "percentage": 1
+    },
+    "losses": {
+        "valid_weight": 1000,
+        "mask_weight": 10,
+        "vgg_weight": 1,
+        "lpips_weight": 10,
+        "id_weight": 1,
+        "adversarial_weight": 1,
+        "ssim_weight": 10,
+        "GAN_LOSS": "hinge"
+    },
+    "model": {
+        "net": "RetouchFormer",
+        "no_dis": 0
+    },
+    "trainer": {
+        "use_wandb": 0,
+        "type": "Adam",
+        "beta1": 0.9,
+        "beta2": 0.99,
+        "lr": 2e-4,
+        "batch_size": 1,
+        "num_workers": 1,
+        "log_freq": 100,
+        "save_freq": 5e3,
+        "iterations": 50e4,
+        "scheduler": {
+            "type": "CosineAnnealingRestartLR",
+            "periods": [20, 5, 5, 5],
+            "restart_weights": [1, 0.2, 0.2, 0.2]
+        }
+    }
+}
