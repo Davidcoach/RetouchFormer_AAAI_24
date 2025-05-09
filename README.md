@@ -79,5 +79,3 @@ To test RetouchFormer:
    ```bash
    python image_retouching.py
    ```
-
-- You can input user instructions and in-the-wild images for retouching purposes.
