@@ -113,7 +113,7 @@ class InpaintGenerator(BaseNetwork):
                  use_checkpoint_ffn=False)
         self.norm = nn.LayerNorm(512)
         
-        self.soft_mask = VQVAEMaskGAN()
+        self.attention_feat = VQVAEMaskGAN()
         self.conv_512 = nn.Sequential(
             nn.Conv2d(64, 128, 3, 2, 1), nn.LeakyReLU(),
             nn.Conv2d(128, 256, 3, 2, 1), nn.LeakyReLU(),
