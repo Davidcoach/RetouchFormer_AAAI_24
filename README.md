@@ -4,7 +4,7 @@
 
 [Wen Xue](https://scholar.google.com.hk/citations?user=OXAPkaEAAAAJ&hl=zh-CN&oi=sra), [Lianxin Xie](https://openreview.net/profile?id=~Lianxin_Xie3), [Le Jiang](https://openreview.net/profile?id=~Le_Jiang3), [Tianyi Chen](https://openreview.net/profile?id=~Tianyi_Chen6), [Chen Liu](https://scholar.google.com/citations?user=RtovsZkAAAAJ&hl=en), [Si Wu](https://scholar.google.com.hk/citations?user=RtkXrnwAAAAJ&hl=zh-CN&oi=sra)*, [Hau-San Wong](https://scholar.google.com.hk/citations?user=i9Dh1OkAAAAJ&hl=zh-CN)<br/>
 
-[South China University of Technology](https://www.scut.edu.cn/en/), [Shantou University](https://www.stu.edu.cn/) [City University of Hong Kong](https://www.cityu.edu.hk/)
+[South China University of Technology](https://www.scut.edu.cn/en/), [Shantou University](https://www.stu.edu.cn/), [City University of Hong Kong](https://www.cityu.edu.hk/)
 
 This is the official code of **AAAI 2024**: *RetouchFormer: Semi-supervised High-Quality Face Retouching Transformer with Prior-Based Selective Self-Attention*.
 
