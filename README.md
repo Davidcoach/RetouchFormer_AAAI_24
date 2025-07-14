@@ -1,4 +1,6 @@
 # RetouchFormer: Semi-supervised High-Quality Face Retouching Transformer with Prior-Based Selective Self-Attention
+> **New!** &nbsp;We have released a follow-up project – **RetouchGPT: LLM-based Interactive High-Fidelity Face Retouching via Imperfection Prompting**.  
+> Check it out here: <https://github.com/Davidcoach/RetouchGPT>  🎉
 
 <img src="flowchart.png"/>
 
@@ -18,6 +20,15 @@ This is the official code of **AAAI 2024**: *RetouchFormer: Semi-supervised High
 - The proposed model, RetouchFormer, is characterized by formulating face retouching as a `soft inpainting' task and realized by joint approximate imperfection prediction and local content synthesis.
 	
 - Based on clean face priors, the spatial information on imperfections is applied to perform selective self-attention computation, through which the spatial interactions between the queries of imperfections and the key-value pairs of normal skin are strengthened.
+
+## Pre-trained Weights
+
+We provide the trained checkpoint **`gen_best.pth`** via Baidu Netdisk:
+
+- **Link:** <https://pan.baidu.com/s/1eVgPN12KJN8GSdOw544ZdQ>  
+- **Extraction code:** `reto`
+
+> After download, place `gen_best.pth` under `release_model/` and reference it in your config or command line.
 
 ------
 
