@@ -88,12 +88,12 @@ class Decoder(nn.Module):
             1024: int(16 * channel_multiplier * narrow),
             2048: int(8 * channel_multiplier * narrow)
         }
-        style_dim = 8
+        self.style_dim = 8
         self.input = nn.Conv2d(self.channels[4], self.channels[4], kernel_size=1)
         self.conv0 = StyledConv(
-            self.channels[4], self.channels[4], 3, style_dim, blur_kernel=blur_kernel, isconcat=isconcat, device=device
+            self.channels[4], self.channels[4], 3, self.style_dim, blur_kernel=blur_kernel, isconcat=isconcat, device=device
         )
-        self.to_rgb0 = ToRGB(self.channels[4] * self.feat_multiplier, style_dim, upsample=False, device=device)
+        self.to_rgb0 = ToRGB(self.channels[4] * self.feat_multiplier, self.style_dim, upsample=False, device=device)
 
         self.log_size = int(math.log(size, 2))
 
@@ -107,20 +107,20 @@ class Decoder(nn.Module):
             out_channel = self.channels[2 ** i]
             if i < 7:
                 self.convs.append(
-                    StyledConv(in_channel * self.feat_multiplier, out_channel, 3, style_dim, upsample=False,
+                    StyledConv(in_channel * self.feat_multiplier, out_channel, 3, self.style_dim, upsample=False,
                                blur_kernel=blur_kernel,
                                isconcat=isconcat, device=device))
-                self.to_rgbs.append(ToRGB(out_channel * self.feat_multiplier, style_dim, upsample=False, device=device))
+                self.to_rgbs.append(ToRGB(out_channel * self.feat_multiplier, self.style_dim, upsample=False, device=device))
             else:
                 self.convs.append(
-                    StyledConv(in_channel * self.feat_multiplier, out_channel, 3, style_dim, upsample=True,
+                    StyledConv(in_channel * self.feat_multiplier, out_channel, 3, self.style_dim, upsample=True,
                                blur_kernel=blur_kernel,
                                isconcat=isconcat, device=device))
-                self.to_rgbs.append(ToRGB(out_channel * self.feat_multiplier, style_dim, upsample=True, device=device))
+                self.to_rgbs.append(ToRGB(out_channel * self.feat_multiplier, self.style_dim, upsample=True, device=device))
 
             self.convs.append(
                 StyledConv(
-                    out_channel * self.feat_multiplier, out_channel, 3, style_dim, blur_kernel=blur_kernel,
+                    out_channel * self.feat_multiplier, out_channel, 3, self.style_dim, blur_kernel=blur_kernel,
                     isconcat=isconcat, device=device))
 
             in_channel = out_channel
